@@ -24,10 +24,10 @@ function fillDataTable(data, tableID) {
     let table = document.querySelector(`#${tableID}`)
     if (!table) {
         console.error(`Table "${tableID}" is not found.`)
-        return
+        return;
     }
 
-    let tbody = table.querySelector("tbody")
+    let tBody = table.querySelector("tBody")
     for (let row of data) {
         let tr = createAnyElement("tr")
         for (let k in row) {
@@ -44,9 +44,9 @@ function fillDataTable(data, tableID) {
 function createAnyElement(name, attributes) {
     let element = document.createElement(name)
     for (let k in attributes) {
-        element.setAttributes(k, attributes[k])
+        element.setAttribute(k, attributes[k])
     }
-    return element
+    return element;
 }
 function createBtnGroup() {
     let group = createAnyElement("div", {class: "btn btn-group"})
@@ -59,5 +59,5 @@ function createBtnGroup() {
     let td = createAnyElement("td")
     td.appendChild(group)
 
-    return td
+    return td;
 }
